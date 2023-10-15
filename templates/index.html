@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <title>Movie Recommendation System</title>
+</head>
+
+<body>
+    <div class="heading">
+        <h3>Movie Recommendation System</h3>
+    </div>
+    <div class="container">
+        <div class="box">
+            <form id="myForm" action="/predict" method="POST">
+                <div class="in">
+                    <label for="enter">ENTER THE MOVIE NAME</label>
+                    <input type="text" name="enter" id="enter">
+                </div>
+                <div class="sub">
+                    <div class="val" onclick="submitForm()">GET RECOMMENDATIONS</div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

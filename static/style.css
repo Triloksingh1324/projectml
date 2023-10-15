@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #26D0CE, #1A2980);
+    font-family: Arial, sans-serif;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    font-weight: bolder;
+    color: white;
+    font-size: 30px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.box {
+    width: 360px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 8px 8px 0px #000000
+}
+
+.in {
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+.sub{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.val {
+    padding: 10px 20px;
+    background: #1A2980;
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background 0.3s;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 0.7s;
+}
+
+.val:hover {
+    background: #26D0CE;
+}
+
+input#enter {
+    margin-top: 10px;
+    padding: 10px;
+    width: 90%;
+    border: 1px solid #ffc5c5;
+    border-radius: 4px;
+}
+
+@keyframes slideRight{
+    0%{
+      transform: translateX(-100px);
+      opacity:0;
+    }
+  
+    100%{
+      transform:translateX(0px);
+      opacity: 1;
+    }
+}

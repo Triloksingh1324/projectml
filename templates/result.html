@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <title>Movie Recommendations</title>
+</head>
+<body>
+    <div class="heading">
+        <h3>Movie Recommendations</h3>
+    </div>
+    <div class="container">
+        <div class="recommendations">
+            <h1>Movie Recommendations:</h1>
+            <ul>
+                {% for movie in suggested_movies %}
+                    <li>{{ movie }}</li>
+                {% endfor %}
+            </ul>
+            <a href="/">
+                <div class="back-button">
+                    <span>Back</span>
+                </div>
+            </a>
+            
+        </div>
+        
+    </div>
+    
+</body>
+</html>

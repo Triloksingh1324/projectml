@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #77A1D3;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #E684AE, #79CBCA, #77A1D3);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #E684AE, #79CBCA, #77A1D3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    color: #fff;
+}
+
+.heading {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #0b915c;
+    font-weight: bolder;
+}
+
+.recommendations {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+/* Style the back button if needed */
+.back-button {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    background: #26D0CE;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    color: #fff;
+}
+
+.back-button:hover {
+    background: #1A2980;
+}
+a{
+    text-decoration: none;
+}
