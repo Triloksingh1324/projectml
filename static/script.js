@@ -4,6 +4,5 @@ function showRecommendations() {
     console.log("clicked")
 }
 function submitForm() {
-    // Trigger the form submission
     document.getElementById("myForm").submit();
 }
