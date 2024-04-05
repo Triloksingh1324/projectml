@@ -11,25 +11,22 @@ app = Flask(__name__)
 def get_movie_recommendations(movie_name, movies_data, feature_vectors):
     list_of_all_titles = movies_data['title'].tolist()
 
-    # Calculate cosine similarity
     similarity = cosine_similarity(feature_vectors)
 
-    # Find close matches
+
     find_close_match = difflib.get_close_matches(movie_name, list_of_all_titles)
 
     if not find_close_match:
-        return []  # No close match found
+        return [] 
 
     close_match = find_close_match[0]
     index_of_the_movie = movies_data[movies_data.title == close_match]['index'].values[0]
     similarity_score = list(enumerate(similarity[index_of_the_movie]))
 
-    # Sort similar movies
     sorted_similar_movies = sorted(similarity_score, key=lambda x: x[1], reverse=True)
 
     suggested_movies = []
 
-    # Generate movie recommendations
     i = 1
     for movie in sorted_similar_movies:
         index = movie[0]
@@ -43,18 +40,17 @@ def get_movie_recommendations(movie_name, movies_data, feature_vectors):
 @app.route("/")
 def hello_world():
     return render_template('index.html', suggested_movies=[])
-# Load movie data and preprocess it here
+
 movies_data = pd.read_csv('movies.csv')
 selected_features = ['genres', 'keywords', 'tagline', 'cast', 'director']
 
-# Data preprocessing
 for feature in selected_features:
     movies_data[feature] = movies_data[feature].fillna('')
 
-# Combine features
+
 combined_features = movies_data['genres'] + ' ' + movies_data['keywords'] + ' ' + movies_data['tagline'] + ' ' + movies_data['cast'] + ' ' + movies_data['director']
 
-# TF-IDF vectorization
+
 vectorizer = TfidfVectorizer()
 feature_vectors = vectorizer.fit_transform(combined_features)
 
